@@ -52,6 +52,7 @@
     "web-vitals": "^2.1.4",
     "web3": "^1.3.3"
   },
+  "homepage": "https://AnaVGD.github.io/Frontend-Developer-Test",
   "scripts": {
     "start": "concurrently \"npm run server\" \"npm run client\"",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
@@ -59,7 +60,9 @@
     "client": "react-scripts --openssl-legacy-provider start",
     "build": "react-scripts --openssl-legacy-provider build",
     "test": "react-scripts eject",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -78,5 +81,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }

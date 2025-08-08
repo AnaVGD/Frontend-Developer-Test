@@ -1,29 +1,28 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
-import "../node_modules/font-awesome/css/font-awesome.min.css";
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Provider } from "react-redux";
+import { HashRouter, Route, Routes } from "react-router-dom";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "../node_modules/font-awesome/css/font-awesome.min.css";
 import store from "./redux/store";
 
+import { Toaster } from "react-hot-toast";
+import ScrollToTop from "./components/ScrollToTop";
 import {
+  AboutPage,
+  Cart,
+  Checkout,
+  ContactPage,
   Home,
+  Login,
+  PageNotFound,
   Product,
   Products,
-  AboutPage,
-  ContactPage,
-  Cart,
-  Login,
   Register,
-  Checkout,
-  PageNotFound,
 } from "./pages";
-import ScrollToTop from "./components/ScrollToTop";
-import { Toaster } from "react-hot-toast";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <BrowserRouter>
+  <HashRouter>
     <ScrollToTop>
       <Provider store={store}>
         <Routes>
@@ -42,5 +41,5 @@ root.render(
       </Provider>
     </ScrollToTop>
     <Toaster />
-  </BrowserRouter>
+  </HashRouter>
 );
